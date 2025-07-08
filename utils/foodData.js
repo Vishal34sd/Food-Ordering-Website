@@ -1,15 +1,8 @@
   export const foodData =[
-  {
-    "id": "1",
-    "dishImage": "https://www.cookwithmanali.com/wp-content/uploads/2020/05/Masala-Dosa-500x375.jpg",
-    "dishName": "Butter Chicken",
-    "origin": "Delhi",
-    "rating": 4.7,
-    "timeToReach": "30 mins"
-  },
+  
   {
     "id": "2",
-    "dishImage": "https://www.cookwithmanali.com/wp-content/uploads/2020/05/Masala-Dosa-500x375.jpg",
+    "dishImage": "dosa.jpeg",
     "dishName": "Masala Dosa",
     "origin": "Bangalore",
     "rating": 4.5,
@@ -17,7 +10,7 @@
   },
   {
     "id": "3",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/paneer-tikka.jpg",
+    "dishImage": "paneerTikka.jpeg",
     "dishName": "Paneer Tikka",
     "origin": "Punjab",
     "rating": 4.6,
@@ -25,7 +18,7 @@
   },
   {
     "id": "4",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/vada-pav.jpg",
+    "dishImage": "vadaPav.jpeg",
     "dishName": "Vada Pav",
     "origin": "Mumbai",
     "rating": 4.3,
@@ -33,7 +26,7 @@
   },
   {
     "id": "5",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/hyderabadi-biryani.jpg",
+    "dishImage": "biryani.jpeg",
     "dishName": "Hyderabadi Biryani",
     "origin": "Hyderabad",
     "rating": 4.8,
@@ -41,7 +34,7 @@
   },
   {
     "id": "6",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/idli.jpg",
+    "dishImage": "idli.jpeg",
     "dishName": "Idli Sambar",
     "origin": "Chennai",
     "rating": 4.4,
@@ -49,7 +42,7 @@
   },
   {
     "id": "7",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/rasgulla.jpg",
+    "dishImage": "rasogulla.jpeg",
     "dishName": "Rasgulla",
     "origin": "Kolkata",
     "rating": 4.2,
@@ -57,7 +50,7 @@
   },
   {
     "id": "8",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/chole-bhature.jpg",
+    "dishImage": "chole.jpeg",
     "dishName": "Chole Bhature",
     "origin": "Amritsar",
     "rating": 4.6,
@@ -65,7 +58,7 @@
   },
   {
     "id": "9",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/dal-makhani.jpg",
+    "dishImage": "dal-makini.jpeg",
     "dishName": "Dal Makhani",
     "origin": "Ludhiana",
     "rating": 4.5,
@@ -73,7 +66,7 @@
   },
   {
     "id": "10",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/pav-bhaji.jpg",
+    "dishImage": "pav-baji.jpeg",
     "dishName": "Pav Bhaji",
     "origin": "Mumbai",
     "rating": 4.4,
@@ -81,7 +74,7 @@
   },
   {
     "id": "11",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/rajma-chawal.jpg",
+    "dishImage": "rajma-chawal.jpeg",
     "dishName": "Rajma Chawal",
     "origin": "Delhi",
     "rating": 4.3,
@@ -89,7 +82,7 @@
   },
   {
     "id": "12",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/samosa.jpg",
+    "dishImage": "samosa.jpeg",
     "dishName": "Samosa",
     "origin": "Uttar Pradesh",
     "rating": 4.1,
@@ -97,7 +90,7 @@
   },
   {
     "id": "13",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/poha.jpg",
+    "dishImage": "poha.jpeg",
     "dishName": "Poha",
     "origin": "Indore",
     "rating": 4.3,
@@ -105,7 +98,7 @@
   },
   {
     "id": "14",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/aloo-paratha.jpg",
+    "dishImage": "aloo-paratha.jpeg",
     "dishName": "Aloo Paratha",
     "origin": "Punjab",
     "rating": 4.5,
@@ -113,7 +106,7 @@
   },
   {
     "id": "15",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/dhokla.jpg",
+    "dishImage": "dhokla.jpeg",
     "dishName": "Dhokla",
     "origin": "Gujarat",
     "rating": 4.4,
@@ -121,7 +114,7 @@
   },
   {
     "id": "16",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/butter-naan.jpg",
+    "dishImage": "butter-naan.jpeg",
     "dishName": "Butter Naan",
     "origin": "Delhi",
     "rating": 4.6,
@@ -129,7 +122,7 @@
   },
   {
     "id": "17",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/kadhai-paneer.jpg",
+    "dishImage": "/kadai-paneer.jpeg",
     "dishName": "Kadhai Paneer",
     "origin": "North India",
     "rating": 4.5,
@@ -137,7 +130,7 @@
   },
   {
     "id": "18",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/malai-kofta.jpg",
+    "dishImage": "malai-kofta.jpeg",
     "dishName": "Malai Kofta",
     "origin": "Lucknow",
     "rating": 4.4,
@@ -145,7 +138,7 @@
   },
   {
     "id": "19",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/momos.jpg",
+    "dishImage": "momos.jpeg",
     "dishName": "Veg Momos",
     "origin": "Darjeeling",
     "rating": 4.3,
@@ -153,7 +146,7 @@
   },
   {
     "id": "20",
-    "dishImage": "https://res.cloudinary.com/demo/image/upload/v1611323467/food/veg-thali.jpg",
+    "dishImage": "veg-thali.jpeg",
     "dishName": "Vegetarian Thali",
     "origin": "India",
     "rating": 4.8,

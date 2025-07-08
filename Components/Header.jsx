@@ -3,8 +3,8 @@ import React from 'react'
 const Header = () => {
   return (
     <div className = "header">
-      <div className = "img-div">
-        <img src= "website-logo.jpeg"></img>
+      <div className = "logo-div">
+        <h1>Foodie-Hut</h1>
       </div>
         <div className = "nav-list">
             <ul className = "ul-container">
