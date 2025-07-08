@@ -10,7 +10,8 @@ body {
   overflow-x: hidden;
 }
 .header{
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +22,7 @@ body {
 }
 .ul-container {
   display : flex;
-  gap:100px;
+  gap:30px;
   list-style-type: none;
 }
 .img-div img{
@@ -112,4 +113,39 @@ body {
 .card-container h3,h5{
   margin-bottom: 4px;
   margin-top: 4px;
+}
+.login {
+  height: 36px;
+  width: 80px;
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-style: normal;
+  cursor: pointer;
+  margin-left: 0;
+  align-self: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.login:hover {
+  background-color: #ffb74d;
+  transform: scale(1.05);
+}
+
+.outer-div{
+  display : flex;
+  gap:40px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+
+}
+.inner-div{
+  display : flex;
+  gap:10px;
+}
+.no-data{
+  text-align: center;
 }
