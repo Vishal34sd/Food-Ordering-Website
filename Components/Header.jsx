@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from "react";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [login , setLogin] = useState("Login");
@@ -14,10 +15,10 @@ const Header = () => {
       </div>
         <div className = "nav-list">
             <ul className = "ul-container">
-                <li onClick={()=>{ return setFilteredData(data)}}>Home </li>
-                <li>Services </li>
-                <li>Contact Us</li>
-                <li>About Us</li>
+                <li><Link to ="/" style={{ textDecoration: 'none', color: 'yellow' }}>Home</Link> </li>
+                <li><Link to ="/contact" style={{ textDecoration: 'none', color: 'yellow' }}>Contact Us</Link> </li>
+                <li><Link to ="/about" style={{ textDecoration: 'none', color: 'yellow' }}>About Us</Link> </li>
+                
                 <li>Cart </li>
                 <li><button className = "login" onClick = {changeToLogout}>{login}</button></li>
             </ul>

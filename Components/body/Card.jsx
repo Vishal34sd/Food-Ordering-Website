@@ -1,16 +1,17 @@
-import React from 'react'
+import React from 'react' 
+const CDN_URL = import.meta.env.VITE_CDN_URL;
 
 const Card = ({data}) => {
-  
+  const { name, cuisines , avgRating  ,cloudinaryImageId,  sla}  = data.info ;
   return (
-    <div className = "card-container">
-        <div className = "res-img">
-      <img src = {data.dishImage}></img>
+    <div className="card-container">
+      <div className="res-img">
+        <img src={CDN_URL + cloudinaryImageId} alt={name} />
       </div>
-      <h3>{data.resName}</h3>
-      <h3>{data.dishName}</h3>
-      <h5>{data.rating } ⭐</h5>
-      <h5>{data.timeToReach}</h5>
+      <h3>{name}</h3>
+      <h5>{cuisines.join(', ')}</h5>
+      <h5>{avgRating} ⭐</h5>
+      <h5>{sla.slaString}</h5>
     </div>
   )
 }
