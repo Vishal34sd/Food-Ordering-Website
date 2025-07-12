@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // ← import Link
 import Card from './Card';
 import Shimmer from '../Shimmer';
-const API_KEY = import.meta.env.VITE_SWIGGY_API;
 
+const API_KEY = import.meta.env.VITE_SWIGGY_API;
 
 const Body = () => {
   const [Data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState('');
   const [filteredData, setFilteredData] = useState([]);
-  
 
   useEffect(() => {
     fetchData();
@@ -17,13 +17,10 @@ const Body = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        API_KEY
-      );
+      const response = await fetch(API_KEY);
       const json = await response.json();
       console.log(json);
 
-      // Safely access deeply nested property
       const restaurants =
         json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
@@ -72,6 +69,7 @@ const Body = () => {
         </div>
         <button onClick={topRatingData}>Top Rated Restaurants</button>
       </div>
+
       <div className="inner-container">
         {loading ? (
           <Shimmer />
@@ -82,7 +80,15 @@ const Body = () => {
             </h1>
           </div>
         ) : (
-          filteredData.map((items) => <Card key={items.info.id} data={items} />)
+          filteredData.map((items) => (
+            <Link
+              key={items.info.id}
+              to={`/restaurant/${items.info.id}`}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <Card data={items} />
+            </Link>
+          ))
         )}
       </div>
     </div>

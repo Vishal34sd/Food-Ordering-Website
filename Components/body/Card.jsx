@@ -2,7 +2,7 @@ import React from 'react'
 const CDN_URL = import.meta.env.VITE_CDN_URL;
 
 const Card = ({data}) => {
-  const { name, cuisines , avgRating  ,cloudinaryImageId,  sla}  = data.info ;
+  const { name, cuisines , avgRating  ,cloudinaryImageId,  sla , locality}  = data.info ;
   return (
     <div className="card-container">
       <div className="res-img">
@@ -12,6 +12,7 @@ const Card = ({data}) => {
       <h5>{cuisines.join(', ')}</h5>
       <h5>{avgRating} ⭐</h5>
       <h5>{sla.slaString}</h5>
+      <h5>{locality}</h5>
     </div>
   )
 }

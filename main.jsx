@@ -4,6 +4,7 @@ import App from './App.jsx'
 import Contact from './Components/Contact.jsx';
 import Body from './Components/body/Body.jsx';
 import About from './Components/About.jsx';
+import MenuCard from './Components/MenuCard.jsx';
 
 
 const appRouter = createBrowserRouter([
@@ -22,6 +23,11 @@ const appRouter = createBrowserRouter([
             path : "/about",
             element : <About/>
         },
+         {
+            path : "/restaurant/:resId",
+            element : <MenuCard/>
+        },
+        
     ]
     }
 ]);
