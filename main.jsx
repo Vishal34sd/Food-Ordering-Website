@@ -5,11 +5,13 @@ import Contact from './Components/Contact.jsx';
 import Body from './Components/body/Body.jsx';
 import About from './Components/About.jsx';
 import MenuCard from './Components/MenuCard.jsx';
+import ErrorPage from './Components/ErrorPage.jsx';
 
 
 const appRouter = createBrowserRouter([
     {path : "/",
     element: <App/>,
+    errorElement : <ErrorPage/>,
     children : [
         {
           path : "/",
