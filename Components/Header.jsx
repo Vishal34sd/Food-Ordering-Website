@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from "react";
 import { Link } from 'react-router-dom';
+import useNetworkStatus from '../utils/useNetworkStatus';
 
 const Header = () => {
   const [login , setLogin] = useState("Login");
@@ -8,6 +9,8 @@ const Header = () => {
   const changeToLogout = ()=>{
     setLogin("Logout");
   }
+
+  const networkStatus = useNetworkStatus();
   return (
     <div className = "header">
       <div className = "logo-div">
@@ -15,6 +18,7 @@ const Header = () => {
       </div>
         <div className = "nav-list">
             <ul className = "ul-container">
+               <p> Online Status:{networkStatus ? "🟢":"🔴"}</p>
                 <li><Link to ="/" style={{ textDecoration: 'none', color: 'yellow' }}>Home</Link> </li>
                 <li><Link to ="/contact" style={{ textDecoration: 'none', color: 'yellow' }}>Contact Us</Link> </li>
                 <li><Link to ="/about" style={{ textDecoration: 'none', color: 'yellow' }}>About Us</Link> </li>

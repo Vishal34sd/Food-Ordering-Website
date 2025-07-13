@@ -81,9 +81,9 @@ body {
 
 .ul-container li:hover {
   
-  color : yellow;
-  font-size: 30px;
-  font-weight: 500px;
+  color : rgb(61, 245, 5);
+  font-size: 28px;
+  font-weight: 400px;
 }
 
 .search button{
@@ -150,4 +150,22 @@ body {
 }
 .no-data{
   text-align: center;
+}
+
+.top-rated-restro{
+  background-color: red;
+  color: #f9f9f5;
+  border-radius: 3px;
+  border: 1px solid black;
+  font-size: large;
+}
+
+.search-bar{
+  width : 300px;
+  height :30px;
+}
+
+.search-btn{
+  border-radius: 2px;
+  background:rgb(183, 238, 223);
 }

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // ← import Link
 import Card from './Card';
 import Shimmer from '../Shimmer';
+import useNetworkStatus from '../../utils/useNetworkStatus';
+import OfflineError from '../OfflineError';
 
 const API_KEY = import.meta.env.VITE_SWIGGY_API;
 
@@ -59,15 +61,15 @@ const Body = () => {
     <div className="outer-container">
       <div className="outer-div">
         <div className="inner-div">
-          <input
+          <input className='search-bar'
             type="text"
             placeholder="Search for restaurants"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button onClick={searchHandler}>Search</button>
+          <button className="search-btn" onClick={searchHandler}>Search</button>
         </div>
-        <button onClick={topRatingData}>Top Rated Restaurants</button>
+        <button  className = "top-rated-restro" onClick={topRatingData}>Top Rated Restaurants</button>
       </div>
 
       <div className="inner-container">

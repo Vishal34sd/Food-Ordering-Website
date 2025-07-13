@@ -78,14 +78,14 @@ const MenuCard = () => {
             height: "250px",
             borderRadius: "3px",
             objectFit: "cover",
-            border: "5px solid #ff8c00",
+            border: "5px solid #060606ff",
             marginBottom: "1rem",
           }}
         />
         <h1
           style={{
             fontSize: "2.5rem",
-            color: "#ff6600",
+            color: "#0c0c0cff",
           }}
         >
           {resInfo?.name || "Loading..."}
