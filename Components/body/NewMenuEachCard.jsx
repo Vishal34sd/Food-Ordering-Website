@@ -5,7 +5,7 @@ const CDN_URL = import.meta.env.VITE_CDN_URL;
 
 const NewMenuEachCard = ({ data }) => {
   const dispatch = useDispatch();
-  const { name, description, price, imageId, defaultPrice } = data?.card?.info;
+  const { name, description, price, imageId, defaultPrice } = data?.card?.info || {};
 
   const addHandler = (item) => {
     dispatch(addItem(item));
@@ -16,8 +16,12 @@ const NewMenuEachCard = ({ data }) => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    padding: "16px 0",
-    borderBottom: "1px solid #ddd",
+    padding: "16px",
+    marginBottom: "16px",
+    backgroundColor: "#ffffff",                // white card
+    borderRadius: "12px",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)", // soft shadow
+    borderBottom: "1px solid #e0e0e0",         // subtle bottom line
     fontFamily: "Arial, sans-serif",
   };
 
@@ -96,12 +100,8 @@ const NewMenuEachCard = ({ data }) => {
         </div>
         <button
           style={addButtonStyle}
-          onMouseEnter={(e) =>
-            (e.target.style.backgroundColor = "#eafbea")
-          }
-          onMouseLeave={(e) =>
-            (e.target.style.backgroundColor = "#fff")
-          }
+          onMouseEnter={(e) => (e.target.style.backgroundColor = "#eafbea")}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = "#fff")}
           onClick={() => addHandler(data.card.info)}
         >
           ADD

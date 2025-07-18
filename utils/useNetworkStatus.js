@@ -1,5 +1,5 @@
 import { useEffect , useState } from "react";
-// Custom Hook
+// Example of Custom Hook
 
 const useNetworkStatus = ()=>{
 

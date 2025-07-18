@@ -31,6 +31,8 @@ const MenuCard = () => {
         setResInfo({
           name: restaurantInfo.name,
           imageId: restaurantInfo.cloudinaryImageId,
+          rating :  restaurantInfo.avgRating ,
+          area :  restaurantInfo.locality
         });
       }
 
@@ -57,7 +59,7 @@ const MenuCard = () => {
         margin: "auto",
         padding: "20px",
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-        backgroundColor: "#fff8f2",
+        backgroundColor: "#dcdcdc",
         color: "#333",
       }}
     >
@@ -91,6 +93,9 @@ const MenuCard = () => {
         >
           {resInfo?.name || "Loading..."}
         </h1>
+        <h3 style={{color: "#0c0c0cff", marginTop:"8px"}}>{resInfo?.rating}⭐</h3>        
+        <h3 style={{color: "#0c0c0cff"}}>Outlet: {resInfo?.area}</h3>        
+
       </header>
 
       <section>
@@ -102,16 +107,16 @@ const MenuCard = () => {
             marginBottom: "1.5rem",
           }}
         >
-          Our Special Menu
+         Flavors to Explore 
         </h2>
 
         <div
           style={{
             display: "flex",
             flexDirection : "column",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
             gap: "1.5rem",
             paddingBottom: "2rem",
+            backgroundColor : "#dcdcdc"
           }}
         >
           {resMenu.length > 0 ? (

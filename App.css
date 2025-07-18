@@ -79,12 +79,7 @@ body {
 
 }
 
-.ul-container li:hover {
-  
-  color : rgb(61, 245, 5);
-  font-size: 28px;
-  font-weight: 400px;
-}
+
 
 .search button{
  height : 40px;
@@ -161,13 +156,18 @@ body {
 }
 
 .search-bar{
-  width : 300px;
-  height :30px;
+  width : 400px;
+  height :32px;
+  padding-left: 8px;
+  font-size: large;
 }
 
 .search-btn{
   border-radius: 2px;
   background:rgb(183, 238, 223);
+  cursor: pointer;
+  font-size: medium;
+  border-radius: 8px;
 }
 
 .opened-label{
@@ -189,5 +189,28 @@ body {
   display : flex ;
   flex-direction: column;
   margin:auto;
+}
+
+.ul-container li {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ul-container li:hover {
+  color: #ffcc00;               
+  transform: translateY(-2px);   
+}
+
+.ul-container li a {
+  text-decoration: none;
+  color: yellow;
+  transition: color 0.3s ease;
+}
+
+.ul-container li:hover a {
+  color: #ffcc00;               
 }
 
