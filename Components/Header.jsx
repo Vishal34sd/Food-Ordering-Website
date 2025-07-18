@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {useState} from "react";
 import { Link } from 'react-router-dom';
 import useNetworkStatus from '../utils/useNetworkStatus';
+import { userInfo } from '../utils/useContext';
 
 const Header = () => {
   const [login , setLogin] = useState("Login");
@@ -9,6 +10,8 @@ const Header = () => {
   const changeToLogout = ()=>{
     setLogin("Logout");
   }
+  const data = useContext(userInfo);
+  const {loggedInUser} = data ;
 
   const networkStatus = useNetworkStatus();
   return (
@@ -25,6 +28,7 @@ const Header = () => {
                 
                 <li>Cart </li>
                 <li><button className = "login" onClick = {changeToLogout}>{login}</button></li>
+                <li>{loggedInUser}</li>
             </ul>
         </div>
     </div>

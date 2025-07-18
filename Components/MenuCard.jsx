@@ -20,6 +20,7 @@ const MenuCard = () => {
     try {
       const resData = await fetch(`${SWIGGY_MENU_API}${resId}`);
       const json = await resData.json();
+      console.log(json); 
 
       // Get Restaurant Info (dynamic)
       const restaurantInfo = json.data.cards.find(

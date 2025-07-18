@@ -16,5 +16,16 @@ const Card = ({data}) => {
     </div>
   )
 }
+// Higher Order Component
+export const withTrendyLabel = (Card)=>{
+  return(props)=>{
+    return(
+      <div className = "hoc-container">
+        <div className = "opened-label"><label >Opened</label></div>
+        <Card {...props}/> 
+      </div>
+    )
+  }
+} 
 
 export default Card

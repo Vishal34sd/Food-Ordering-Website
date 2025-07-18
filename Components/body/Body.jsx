@@ -4,8 +4,11 @@ import Card from './Card';
 import Shimmer from '../Shimmer';
 import useNetworkStatus from '../../utils/useNetworkStatus';
 import OfflineError from '../OfflineError';
+import { withTrendyLabel } from './Card';
 
 const API_KEY = import.meta.env.VITE_SWIGGY_API;
+
+ const RestroCardTrendy =  withTrendyLabel(Card);
 
 const Body = () => {
   const [Data, setData] = useState([]);
@@ -88,7 +91,7 @@ const Body = () => {
               to={`/restaurant/${items.info.id}`}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <Card data={items} />
+             {items.info.availability.opened?<RestroCardTrendy data={ items}/>: <Card data={items} />}
             </Link>
           ))
         )}
