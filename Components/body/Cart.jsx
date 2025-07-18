@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../Header';
 import NewMenuEachCard from './NewMenuEachCard';
 import { useSelector } from 'react-redux';
 
@@ -8,12 +7,11 @@ const Cart = () => {
 
   return (
     <div>
-      <Header />
       <div>
         <h3>Your Cart</h3>
         <div>
-          {cartItems.map((item, index) => (
-            <NewMenuEachCard key={index} data={item} />
+          {cartItems.map((item) => (
+            <CartItemCart key={item.id} data={item} />
           ))}
         </div>
       </div>
