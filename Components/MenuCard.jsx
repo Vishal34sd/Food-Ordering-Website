@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MenuEachCard from "./MenuEachCard";
 const CDN_URL = import.meta.env.VITE_CDN_URL;
 const SWIGGY_MENU_API = import.meta.env.VITE_SWIGGY_MENU_API;
+import NewMenuEachCard from "../Components/body/NewMenuEachCard"
 
 const MenuCard = () => {
   const { resId } = useParams();
@@ -34,7 +34,7 @@ const MenuCard = () => {
         });
       }
 
-      // Get Menu Items dynamically
+      
       const regularCards =
         json.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
@@ -107,7 +107,8 @@ const MenuCard = () => {
 
         <div
           style={{
-            display: "grid",
+            display: "flex",
+            flexDirection : "column",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
             gap: "1.5rem",
             paddingBottom: "2rem",
@@ -115,7 +116,7 @@ const MenuCard = () => {
         >
           {resMenu.length > 0 ? (
             resMenu.map((item) => (
-              <MenuEachCard key={item.card.info.id} data={item} />
+              <NewMenuEachCard key={item.card.info.id} data={item} />
             ))
           ) : (
             <p style={{ gridColumn: "1 / -1", textAlign: "center" }}>

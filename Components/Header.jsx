@@ -3,9 +3,14 @@ import {useState} from "react";
 import { Link } from 'react-router-dom';
 import useNetworkStatus from '../utils/useNetworkStatus';
 import { userInfo } from '../utils/useContext';
+import { useSelector } from 'react-redux';
+
+
 
 const Header = () => {
   const [login , setLogin] = useState("Login");
+
+  const cartItem = useSelector((store)=> store.cart.items);
 
   const changeToLogout = ()=>{
     setLogin("Logout");
@@ -26,7 +31,7 @@ const Header = () => {
                 <li><Link to ="/contact" style={{ textDecoration: 'none', color: 'yellow' }}>Contact Us</Link> </li>
                 <li><Link to ="/about" style={{ textDecoration: 'none', color: 'yellow' }}>About Us</Link> </li>
                 
-                <li>Cart </li>
+                <Link to ="/cart"><li>Cart ({cartItem.length   } items)</li></Link>
                 <li><button className = "login" onClick = {changeToLogout}>{login}</button></li>
                 <li>{loggedInUser}</li>
             </ul>
