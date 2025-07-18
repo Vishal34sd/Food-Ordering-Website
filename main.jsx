@@ -6,6 +6,7 @@ import Body from './Components/body/Body.jsx';
 import About from './Components/About.jsx';
 import MenuCard from './Components/MenuCard.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
+import Cart from './Components/body/Cart.jsx';
 
 
 const appRouter = createBrowserRouter([
@@ -29,6 +30,11 @@ const appRouter = createBrowserRouter([
             path : "/restaurant/:resId",
             element : <MenuCard/>
         },
+         {
+            path : "/cart",
+            element : <Cart/>
+        },
+        
         
     ]
     }

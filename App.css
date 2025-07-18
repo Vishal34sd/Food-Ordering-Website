@@ -169,3 +169,25 @@ body {
   border-radius: 2px;
   background:rgb(183, 238, 223);
 }
+
+.opened-label{
+  background: #040222;
+  color:rgb(253, 249, 3);
+  width : 80px;
+  height:14px;
+  margin-left: 16px;
+  padding: 10px;
+  margin-top: 12px;
+  text-align: center;
+  border-radius: 8px;
+  font-family:  sans-serif;
+    
+  
+}
+
+.hoc-container{
+  display : flex ;
+  flex-direction: column;
+  margin:auto;
+}
+
