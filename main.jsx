@@ -7,6 +7,7 @@ import About from './Components/About.jsx';
 import MenuCard from './Components/MenuCard.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
 import Cart from './Components/body/Cart.jsx';
+import OrderPlaced from './Components/OrderPlaced.jsx';
 
 
 const appRouter = createBrowserRouter([
@@ -33,6 +34,10 @@ const appRouter = createBrowserRouter([
          {
             path : "/cart",
             element : <Cart/>
+        },
+         {
+            path : "/order",
+            element : <OrderPlaced/>
         },
         
         

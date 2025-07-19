@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CartItemCard from './CartItemCard';
-import { clearCart } from '../../utils/cartSlice'; // Ensure this path is correct
+import { clearCart } from '../../utils/cartSlice'; 
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -104,7 +105,7 @@ const Cart = () => {
         <span>₹{totalAmount.toFixed(2)}</span>
       </div>
        <div style={{textAlign: "center", marginTop: "20px"}}>
-         <button style={checkoutBtnStyle}>PROCEED TO CHECKOUT</button>
+         <Link to ="/order"><button style={checkoutBtnStyle}>PROCEED TO CHECKOUT</button></Link>
        </div>
     </div>
   );
