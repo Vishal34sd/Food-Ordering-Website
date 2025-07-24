@@ -46,7 +46,7 @@ const Body = () => {
   };
 
   const topRatingData = () => {
-    const filterData = Data.filter((item) => item.info?.avgRating > 4.0);
+    const filterData = Data.filter((item) => item.info?.avgRating > 4.5);
     setFilteredData(filterData);
   };
 

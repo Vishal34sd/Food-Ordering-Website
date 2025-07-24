@@ -26,6 +26,15 @@ const Cart = () => {
     return total + ((item.price || item.defaultPrice) / 100) * quantity;
   }, 0);
 
+  const playSound = ()=>{
+    const sound = new Audio("/success.mp3");
+    sound.play();
+    alert("Confirm order");
+    dispatch(clearCart());
+  }
+
+  
+
   // --- STYLES ---
   const cartContainerStyle = {
     maxWidth: '600px',
@@ -105,7 +114,7 @@ const Cart = () => {
         <span>₹{totalAmount.toFixed(2)}</span>
       </div>
        <div style={{textAlign: "center", marginTop: "20px"}}>
-         <Link to ="/order"><button style={checkoutBtnStyle}>PROCEED TO CHECKOUT</button></Link>
+         <Link to ="/order"><button style={checkoutBtnStyle} onClick={playSound}>PROCEED TO CHECKOUT</button></Link>
        </div>
     </div>
   );

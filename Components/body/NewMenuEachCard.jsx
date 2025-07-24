@@ -1,15 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../../utils/cartSlice";
 
-const CDN_URL = import.meta.env.VITE_CDN_URL;
-
-const NewMenuEachCard = ({ data }) => {
-  const dispatch = useDispatch();
-  const { name, description, price, imageId, defaultPrice } = data?.card?.info || {};
-
-  const addHandler = (item) => {
-    dispatch(addItem(item));
-  };
 
   // === Inline CSS ===
   const containerStyle = {
@@ -84,6 +75,23 @@ const NewMenuEachCard = ({ data }) => {
     transition: "background-color 0.3s ease",
   };
 
+  
+const CDN_URL = import.meta.env.VITE_CDN_URL;
+
+const NewMenuEachCard = ({ data }) => {
+  const dispatch = useDispatch();
+  const { name, description, price, imageId, defaultPrice } = data?.card?.info || {};
+
+  const addHandler = (item) => {
+    dispatch(addItem(item));
+  };
+
+  const playSound = ()=>{
+    const sound = new Audio("/item-picked.mp3");
+    sound.play();
+    
+  }
+
   return (
     <div style={containerStyle}>
       {/* Left: Info */}
@@ -102,7 +110,10 @@ const NewMenuEachCard = ({ data }) => {
           style={addButtonStyle}
           onMouseEnter={(e) => (e.target.style.backgroundColor = "#eafbea")}
           onMouseLeave={(e) => (e.target.style.backgroundColor = "#fff")}
-          onClick={() => addHandler(data.card.info)}
+          onClick={() => {  addHandler(data.card.info);
+                            playSound();
+            }
+          }
         >
           ADD
         </button>
