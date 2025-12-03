@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 const CDN_URL = import.meta.env.VITE_CDN_URL;
 const SWIGGY_MENU_API = import.meta.env.VITE_SWIGGY_MENU_API;
-import NewMenuEachCard from "../Components/body/NewMenuEachCard"
+import NewMenuEachCard from "../Components/body/NewMenuEachCard";
 
 const MenuCard = () => {
   const { resId } = useParams();
-
   const [resMenu, setResMenu] = useState([]);
   const [resInfo, setResInfo] = useState(null);
 
@@ -18,36 +17,42 @@ const MenuCard = () => {
 
   const fetchMenu = async () => {
     try {
-      const resData = await fetch(`${SWIGGY_MENU_API}${resId}`);
-      const json = await resData.json();
-      console.log(json); 
+      const res = await fetch(`${SWIGGY_MENU_API}${resId}`);
+      const json = await res.json();
+      console.log("📦 Full Menu JSON:", json);
 
-      // Get Restaurant Info (dynamic)
-      const restaurantInfo = json.data.cards.find(
-        (card) => card.card?.card?.info
-      )?.card.card.info;
+      // ✅ Fetch Restaurant Info (Dynamic)
+      const restaurantInfoCard = json.data.cards.find(
+        (c) => c.card?.card?.info
+      );
+      const info = restaurantInfoCard?.card?.card?.info;
 
-      if (restaurantInfo) {
+      if (info) {
         setResInfo({
-          name: restaurantInfo.name,
-          imageId: restaurantInfo.cloudinaryImageId,
-          rating :  restaurantInfo.avgRating ,
-          area :  restaurantInfo.locality
+          name: info.name,
+          imageId: info.cloudinaryImageId,
+          rating: info.avgRating,
+          area: info.areaName || info.locality,
         });
       }
 
-      
+      // ✅ Extract All Items under REGULAR > categories dynamically
       const regularCards =
-        json.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+        json?.data?.cards
+          ?.find((c) => c.groupedCard)
+          ?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
 
-      const itemCardsWrapper = regularCards?.find(
-        (c) => c.card?.card?.itemCards
-      );
+      let itemsArray = [];
 
-      const itemCards = itemCardsWrapper?.card?.card?.itemCards || [];
-      setResMenu(itemCards);
+      regularCards.forEach((obj) => {
+        if (obj.card?.card?.itemCards) {
+          itemsArray.push(...obj.card.card.itemCards);
+        }
+      });
+
+      setResMenu(itemsArray);
     } catch (error) {
-      console.error("Error fetching menu:", error);
+      console.error("❌ Error fetching menu:", error);
     }
   };
 
@@ -93,9 +98,10 @@ const MenuCard = () => {
         >
           {resInfo?.name || "Loading..."}
         </h1>
-        <h3 style={{color: "#0c0c0cff", marginTop:"8px"}}>{resInfo?.rating}⭐</h3>        
-        <h3 style={{color: "#0c0c0cff"}}>Outlet: {resInfo?.area}</h3>        
-
+        <h3 style={{ color: "#0c0c0cff", marginTop: "8px" }}>
+          {resInfo?.rating}⭐
+        </h3>
+        <h3 style={{ color: "#0c0c0cff" }}>Outlet: {resInfo?.area}</h3>
       </header>
 
       <section>
@@ -107,16 +113,16 @@ const MenuCard = () => {
             marginBottom: "1.5rem",
           }}
         >
-         Flavors to Explore 
+          Flavors to Explore
         </h2>
 
         <div
           style={{
             display: "flex",
-            flexDirection : "column",
+            flexDirection: "column",
             gap: "1.5rem",
             paddingBottom: "2rem",
-            backgroundColor : "#dcdcdc"
+            backgroundColor: "#dcdcdc",
           }}
         >
           {resMenu.length > 0 ? (
@@ -125,8 +131,7 @@ const MenuCard = () => {
             ))
           ) : (
             <p style={{ gridColumn: "1 / -1", textAlign: "center" }}>
-              Loading Menu...
-              Please wait !!
+              Loading Menu... Please wait !!
             </p>
           )}
         </div>
